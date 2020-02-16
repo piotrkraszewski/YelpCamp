@@ -17,14 +17,10 @@ var commentRoutes = require('./routes/comments'),
 	campgroundRoutes = require('./routes/campgrounds'),
 	indexRoutes = require('./routes/index');
 
-// seedDB(); // seed the data
-
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-
-// mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
 
 var url = process.env.DATABASEURL || 'mongodb://localhost:27017/yelp_camp';
 
