@@ -22,9 +22,13 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-var url = process.env.DATABASEURL || 'mongodb://localhost:27017/yelp_camp' || 'mongodb+srv://Piotr:lol@cluster0-xm17x.gcp.mongodb.net/test?retryWrites=true&w=majority'
+var url =
+	process.env.DATABASEURL ||
+	'mongodb://localhost:27017/yelp_camp' ||
+	'mongodb+srv://Piotr:lol@cluster0-xm17x.gcp.mongodb.net/test?retryWrites=true&w=majority';
 
-mongoose.connect(url, {
+mongoose
+	.connect(url, {
 		useNewUrlParser: true,
 		useCreateIndex: true
 	})
@@ -68,4 +72,6 @@ app.use('/campgrounds', campgroundRoutes);
 app.use('/campgrounds/:id/comments', commentRoutes);
 
 // to musi byæ ¿eby dzia³a³o na heroku i na pc w port 3000
-app.listen(process.env.PORT, process.env.IP);
+app.listen(process.env.PORT || 3000, () => {
+	console.log('The server is live');
+});
