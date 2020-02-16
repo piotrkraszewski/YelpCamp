@@ -28,8 +28,7 @@ mongoose.set('useUnifiedTopology', true);
 
 var url = process.env.DATABASEURL || 'mongodb://localhost:27017/yelp_camp';
 
-mongoose
-	.connect(url, {
+mongoose.connect(url, {
 		useNewUrlParser: true,
 		useCreateIndex: true
 	})
