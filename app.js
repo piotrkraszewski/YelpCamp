@@ -72,6 +72,6 @@ app.use('/campgrounds', campgroundRoutes);
 app.use('/campgrounds/:id/comments', commentRoutes);
 
 // to musi byæ ¿eby dzia³a³o na heroku i na pc w port 3000
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 3000 || 80, () => {
 	console.log('The server is live');
 });
