@@ -22,22 +22,28 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-var url =
-	process.env.DATABASEURL ||
-	'mongodb://localhost:27017/yelp_camp' ||
-	'mongodb+srv://Piotr:lol@cluster0-xm17x.gcp.mongodb.net/test?retryWrites=true&w=majority';
+// seedDB();
+mongoose.connect("mongodb+srv://Admin:123@cluster0-xm17x.mongodb.net/test?retryWrites=true&w=majority", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
-mongoose
-	.connect(url, {
-		useNewUrlParser: true,
-		useCreateIndex: true
-	})
-	.then(() => {
-		console.log('Connected to DB!');
-	})
-	.catch((err) => {
-		console.log('ERROR:', err.message);
-	});
+// var url =
+// 	process.env.DATABASEURL ||
+// 	'mongodb+srv://Admin:123@cluster0-xm17x.gcp.mongodb.net/test?retryWrites=true&w=majority' ||
+// 	'mongodb://localhost:27017/yelp_camp' ;
+
+// mongoose
+// 	.connect(url, {
+// 		useNewUrlParser: true,
+// 		useCreateIndex: true
+// 	})
+// 	.then(() => {
+// 		console.log('Connected to DB!');
+// 	})
+// 	.catch((err) => {
+// 		console.log('ERROR:', err.message);
+// 	});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
