@@ -23,10 +23,13 @@ mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
 // seedDB();
-mongoose.connect("mongodb+srv://Admin:123@cluster0-xm17x.mongodb.net/test?retryWrites=true&w=majority", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+mongoose.connect("mongodb+srv://Admin:123@cluster0-xm17x.mongodb.net/test?retryWrites=true&w=majority");
+
+
+// mongoose.connect("mongodb+srv://Admin:123@cluster0-xm17x.mongodb.net/test?retryWrites=true&w=majority", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// });
 
 // var url =
 // 	process.env.DATABASEURL ||
