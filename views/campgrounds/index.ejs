@@ -18,6 +18,15 @@
                     <img src="<%= el.image %>">
                     <div class="caption">
                         <h4><%= el.name %></h4>
+                        <% if (el.rating === 0) { %>
+                            <em>No reviews yet.</em>
+                            <% } else { %>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star <% if (el.rating > 1.5) { %> checked <% } %>"></span>
+                            <span class="fa fa-star <% if (el.rating > 2.5) { %> checked <% } %>"></span>
+                            <span class="fa fa-star <% if (el.rating > 3.5) { %> checked <% } %>"></span>
+                            <span class="fa fa-star <% if (el.rating > 4.5) { %> checked <% } %>"></span>
+                            <% } %>
                     </div>
                     <p>
                         <a href="/campgrounds/<%= el._id %>" class="btn btn-primary">More info</a>    

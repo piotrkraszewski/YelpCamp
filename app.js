@@ -1,16 +1,21 @@
-var express = require('express'),
-	app = express(),
-	bodyParser = require('body-parser'),
-	mongoose = require('mongoose'),
-	Campground = require('./models/campground.js'),
-	Comment = require('./models/comment.js'),
-	User = require('./models/user.js'),
-	passport = require('passport'),
-	LocalStrategy = require('passport-local'),
-	User = require('./models/user'),
-	methodOverride = require('method-override'),
-	flash = require('connect-flash'),
-	seedDB = require('./seeds.js');
+var express          = require('express'),
+	app              = express(),
+	bodyParser       = require('body-parser'),
+	mongoose         = require('mongoose'),
+	Campground       = require('./models/campground.js'),
+	Comment          = require('./models/comment.js'),
+	User             = require('./models/user.js'),
+	passport         = require('passport'),
+	LocalStrategy    = require('passport-local'),
+	User             = require('./models/user'),
+	methodOverride   = require('method-override'),
+	flash            = require('connect-flash'),
+	seedDB           = require('./seeds.js')
+
+	commentRoutes    = require("./routes/comments"),
+    reviewRoutes     = require("./routes/reviews"),
+    campgroundRoutes = require("./routes/campgrounds"),
+    indexRoutes      = require("./routes/index");
 
 // requireing routes
 var commentRoutes = require('./routes/comments'),
@@ -77,6 +82,7 @@ app.use(function(req, res, next) {
 app.use(indexRoutes);
 app.use('/campgrounds', campgroundRoutes);
 app.use('/campgrounds/:id/comments', commentRoutes);
+app.use("/campgrounds/:id/reviews", reviewRoutes);
 
 // to musi byæ ¿eby dzia³a³o na heroku i na pc w port 3000
 app.listen(process.env.PORT || 3000 || 80, () => {
