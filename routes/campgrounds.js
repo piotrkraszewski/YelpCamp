@@ -3,6 +3,7 @@ var router = express.Router()
 var Campground = require("../models/campground")
 var middleware = require("../middleware/index.js")
 var Review = require("../models/review")
+var Comment = require("../models/comment");
 
 
 //INDEX - show all campgrounds
@@ -131,6 +132,7 @@ router.delete("/:id", middleware.checkCampgroundOwnership, function (req, res) {
     });
 });
 
+// Define escapeRegex function for search feature
 function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
