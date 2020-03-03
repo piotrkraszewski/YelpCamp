@@ -3,33 +3,37 @@
 } */
 
 .thumbnail img {
-    width: 100%;
+	width: 100%;
 }
 
-.thumbnail  {
-    padding: 0;
+.thumbnail {
+	padding: 0;
 }
 
 .thumbnail .caption-full {
-    padding: 9px;
+	padding: 9px;
 }
 
-.delete-form{
-    display: inline;
+.delete-form {
+	display: inline;
 }
 
 .checked {
-    color: orange;
+	color: orange;
 }
 
-.jumbotron { max-height: 275px; }
+/* .jumbotron { max-height: 275px; } */
 
 .jumbotron h1 {
-    /* position: relative;  */
-    margin-top: -25px;
-    /* display: block; */
-    /* font-weight: bold; */
-    /* font-size: 30px; */
-    /* color: white; */
-    /* padding-left: 40px; */
-  }
+	/* position: relative;  */
+	margin-top: -25px;
+	/* display: block; */
+	/* font-weight: bold; */
+	/* font-size: 30px; */
+	/* color: white; */
+	/* padding-left: 40px; */
+}
+
+.jumbotron .form-group{
+    margin-bottom: -25px;
+}
