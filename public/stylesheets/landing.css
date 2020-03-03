@@ -10,6 +10,16 @@ body{
     /* vertical-align: middle */
 }
 
+@media (max-width: 500px) {
+  #landing-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 20vh;
+    /* vertical-align: middle */
+}
+}
+
 #landing-header h1 {
     color: #fff;
 }
