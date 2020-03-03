@@ -37,3 +37,9 @@
 .jumbotron .form-group{
     margin-bottom: -25px;
 }
+
+@media (max-width: 770px) {
+#search{
+	margin-top: 5px;
+}
+}

@@ -9,6 +9,11 @@ body{
     padding-top: 35vh;
     /* vertical-align: middle */
 }
+@media (max-width: 770px) {
+#landingsearch{
+  margin-top: 5px;
+}
+}
 
 @media (max-width: 500px) {
   #landing-header {
@@ -16,8 +21,7 @@ body{
     position: relative;
     text-align: center;
     padding-top: 20vh;
-    /* vertical-align: middle */
-}
+  }
 }
 
 #landing-header h1 {
