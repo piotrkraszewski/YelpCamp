@@ -38,8 +38,18 @@
     margin-bottom: -25px;
 }
 
-@media (max-width: 770px) {
-#search{
-	margin-top: 5px;
+.modal-header{
+	background-color: #d9534f;
 }
+.modal-title{
+	color: white;
+}
+.close{
+	color: white;
+}
+
+@media (max-width: 770px) {
+	#search{
+		margin-top: 5px;
+	}
 }
