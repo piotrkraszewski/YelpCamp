@@ -23,7 +23,12 @@ router.get("/", function(req, res){
                 noMatchBtn = 'btn btn-primary btn-default'
                 noMatchText = 'See all campgrounds'
             }
-           res.render("campgrounds/index",{campgrounds: allCampgrounds, page: 'campgrounds', noMatch: noMatch, noMatchText: noMatchText, noMatchBtn: noMatchBtn});
+           res.render("campgrounds/index",{
+               campgrounds: allCampgrounds, 
+               page: 'campgrounds', 
+               noMatch: noMatch, 
+               noMatchText: noMatchText, 
+               noMatchBtn: noMatchBtn});
         }
      });
     } else {
