@@ -47,6 +47,13 @@
 .myClose{
 	color: white;
 }
+.myLikesHeader{
+	background-color: #428bca;
+}
+
+.myLikesTitle{
+	color: white;
+}
 
 @media (max-width: 770px) {
 	#search{
