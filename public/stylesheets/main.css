@@ -1,7 +1,3 @@
-/* body {
-    background: rgb(39, 39, 39);
-} */
-
 .thumbnail img {
 	width: 100%;
 }
@@ -22,16 +18,8 @@
 	color: orange;
 }
 
-/* .jumbotron { max-height: 275px; } */
-
 .jumbotron h1 {
-	/* position: relative;  */
 	margin-top: -25px;
-	/* display: block; */
-	/* font-weight: bold; */
-	/* font-size: 30px; */
-	/* color: white; */
-	/* padding-left: 40px; */
 }
 
 .jumbotron .form-group{
@@ -55,8 +43,32 @@
 	color: white;
 }
 
+@media (max-width: 1600px) {
+	.myLogin{
+		width: 30%; 
+		margin: 25px auto;
+	}
+}
+
+@media (max-width: 1000px) {
+	.myLogin{
+		width: 50%; 
+		margin: 25px auto;
+	}
+}
 @media (max-width: 770px) {
 	#search{
 		margin-top: 5px;
+	}
+	.myLogin{
+		width: 70%; 
+		margin: 25px auto;
+	}
+
+}
+@media (max-width: 600px) {
+	.myLogin{
+		width: 80%; 
+		margin: 25px auto;
 	}
 }
