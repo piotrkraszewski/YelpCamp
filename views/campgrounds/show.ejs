@@ -19,12 +19,14 @@
 
 <!-- Like Section -->
 
+<!--
 <div class="pull-right">
     <button type="button" class="btn btn-xs btn-primary" data-toggle="modal"
             data-target="#campgroundLikes">
         <span>Total likes: <i class="fas fa-thumbs-up"></i> <%= campground.likes.length %></span>
     </button>
 </div>
+-->
 
 <div style="padding-bottom: 10px;">
     <form action="/campgrounds/<%= campground._id %>/like" method="POST">
@@ -43,6 +45,7 @@
             <button type="button" class="btn btn-sm btn-default" data-toggle="modal"
                     data-target="#campgroundLikes">See more details
             </button>
+
         </div>
     </form>
 </div>
