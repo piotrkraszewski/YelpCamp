@@ -219,13 +219,12 @@
                             </p>
                         <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
 
-                            <!-- hide original delete button
                             <form id="delete-form" action="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
                                 <input type="submit" class="btn btn-xs btn-danger pull-right" value="Delete">
                             </form>
-                            -->
+                            
 
-                            <a class="btn btn-xs btn-danger pull-right" style="margin-right: 5px" data-toggle="modal" data-target="#deleteComment">Delete</a>
+                            <!--<a class="btn btn-xs btn-danger pull-right" style="margin-right: 5px" data-toggle="modal" data-target="#deleteComment">Delete</a>-->
 
                             <a class="btn btn-xs btn-warning pull-right" style="margin-right: 5px" href="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>/edit">Edit</a>
 
@@ -239,8 +238,8 @@
 </div>
 
 
-<!-- Delete Modal comment -->
-<% campground.comments.(function(comment){ %>
+<!-- Delete Modal comment
+<% campground.comments.forEach(function(comment){ %>
     <div class="modal fade" id="deleteComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -271,7 +270,7 @@
     </div>
     <% }) %>
     
-<!-- Delete Modal comment End -->
+Delete Modal comment End -->
 
 
 
