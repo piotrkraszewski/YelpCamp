@@ -59,11 +59,47 @@
                         <em>Submitted by: <%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></em>
                     </p>
                     <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+                       <!-- hide original delete button
                         <form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
                             <button class="btn btn-xs btn-danger pull-right">Delete</button>
                         </form>
+                        -->
+                        <a class="btn btn-xs btn-danger pull-right" style="margin-right: 5px" data-toggle="modal" data-target="#deleteCamp">Delete</a>
                         
                         <a class="btn btn-xs btn-warning pull-right" style="margin-right: 5px" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+
+                        <!-- Delete Modal review -->
+                                <div class="modal fade" id="deleteCamp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header myModalHeader">
+                                        <button type="button" class="close myClose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title myModalTitle" id="myModalLabel">Delete window</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <p style="font-weight: bold;">Do you really want to delete camp:</p>
+                                        <h4 class="pull-right">$<%= campground.price %>/night</h4>
+                                        <h4><a><%=campground.name%></a></h4>
+                                        <p><%= campground.description %></p>
+                                        <p>
+                                            <em>Submitted by: <%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></em>
+                                        </p>
+
+                                    </div>
+                                        
+                                    <div class="modal-footer">
+
+                                        <form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                                            <button class="btn btn-danger pull-right">Delete</button>
+                                        </form>
+
+                                        <button type="button" class="btn btn-default" style="margin-right: 5px;" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            <!-- Delete Modal comment End -->
                     <% } %>
                     <div style="margin-top: 10px;">
                         <a class="btn btn-default" href="/campgrounds"><i class="fa fa-arrow-left"></i> Go back</a>
@@ -117,7 +153,7 @@
                                 <a class="btn btn-xs btn-warning pull-right" style="margin-right: 5px" href="/campgrounds/<%=campground._id %>/reviews/<%=review._id %>/edit">Edit</a>
 
 
-                                <!-- Delete Modal comment -->
+                                <!-- Delete Modal review -->
                                 <div class="modal fade" id="deleteReview" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -126,17 +162,18 @@
                                         <h4 class="modal-title myModalTitle" id="myModalLabel">Delete window</h4>
                                     </div>
                                     <div class="modal-body">
+                                        <p style="font-weight: bold;">Do you really want to delete review:</p>
                                         <div class="col-md-3">
                                             <%- '<span class="fa fa-star checked"></span>'.repeat(review.rating) %><%- '<span class="fa fa-star"></span>'.repeat(5 - review.rating) %>
                                             <div>Review by: <strong><%= review.author.username %></strong></div>
                                             <span><em><%= review.updatedAt.toDateString() %></em></span>
                                         </div>
-                                        <p style="text-align: justify; word-wrap: break-word; margin-top: 7px;">
+                                        <p style="text-align: justify; word-wrap: break-word; margin-top: 18px;">
                                             <%= review.text %>
                                         </p>
                                     </div>
                                         
-                                    <div class="modal-footer">
+                                    <div class="modal-footer" style="margin-top: 40px;">
 
                                         <form id="delete-form" action="/campgrounds/<%=campground._id %>/reviews/<%=review._id %>?_method=DELETE" method="POST">
                                             <input type="submit" class="btn btn-danger pull-right" value="Delete">
@@ -199,7 +236,7 @@
                                         <h4 class="modal-title myModalTitle" id="myModalLabel">Delete window</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Do you really want to delete comment:</p>
+                                        <p style="font-weight: bold;">Do you really want to delete comment:</p>
                                         <strong><%= comment.author.username %></strong>
                                         <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
                                         <p>
