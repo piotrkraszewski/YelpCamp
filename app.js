@@ -15,7 +15,8 @@ var express          = require('express'),
 	commentRoutes    = require("./routes/comments"),
     reviewRoutes     = require("./routes/reviews"),
     campgroundRoutes = require("./routes/campgrounds"),
-    indexRoutes      = require("./routes/index");
+	indexRoutes      = require("./routes/index"),
+	port 			 = process.env.PORT || 3000 || 80;
 
 // requireing routes
 var commentRoutes = require('./routes/comments'),
@@ -87,6 +88,6 @@ app.use('/campgrounds/:id/comments', commentRoutes);
 app.use("/campgrounds/:id/reviews", reviewRoutes);
 
 // to musi byæ ¿eby dzia³a³o na heroku i na pc w port 3000
-app.listen(process.env.PORT || 3000 || 80, () => {
-	console.log('The server is live');
+app.listen(port, () => {
+	console.log('The server is live on port: ' + port);
 });
